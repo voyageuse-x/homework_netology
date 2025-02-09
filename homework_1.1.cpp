@@ -1,6 +1,73 @@
-п»їРЎР±РѕСЂРєР° РЅР°С‡Р°С‚Р° РІ 13:16...
-1>------ РЎР±РѕСЂРєР° РЅР°С‡Р°С‚Р°: РїСЂРѕРµРєС‚: Project2, РљРѕРЅС„РёРіСѓСЂР°С†РёСЏ: Debug x64 ------
-1>main.cpp
-1>Project2.vcxproj -> C:\Users\voyageuse\source\repos\Project2\x64\Debug\Project2.exe
-========== РЎР±РѕСЂРєР°: СѓСЃРїРµС€РЅРѕ РІС‹РїРѕР»РЅРµРЅРѕВ вЂ” 1 , СЃРѕ СЃР±РѕРµРјВ вЂ” 0, РІ Р°РєС‚СѓР°Р»СЊРЅРѕРј СЃРѕСЃС‚РѕСЏРЅРёРёВ вЂ” 0, РїСЂРѕРїСѓС‰РµРЅРѕВ вЂ” 0 ==========
-========== РЎР±РѕСЂРєР° Р·Р°РІРµСЂС€РµРЅРѕ РІ 13:16 Рё Р·Р°РЅСЏР»Рѕ 01,890 СЃ ==========
+#include <iostream>
+
+enum Months
+{
+	january = 1,
+	february,
+	march,
+	april,
+	may,
+	june,
+	july,
+	august,
+	september,
+	october,
+	november,
+	december
+
+};
+
+int main() {
+	setlocale(LC_ALL, "ru");
+	int month{};
+	do {
+		std::cout << "Введите номер месяца: ";
+		std::cin >> month;
+		switch (month) {
+		case 0:
+			std::cout << "До свидания" << std::endl;
+			break;
+		case january:
+			std::cout << "Январь" << std::endl;
+			break;
+		case february:
+			std::cout << "Февраль" << std::endl;
+			break;
+		case march:
+			std::cout << "Март" << std::endl;
+			break;
+		case april:
+			std::cout << "Апрель" << std::endl;
+			break;
+		case may:
+			std::cout << "Май" << std::endl;
+			break;
+		case june:
+			std::cout << "Июнь" << std::endl;
+			break;
+		case july:
+			std::cout << "Июль" << std::endl;
+			break;
+		case august:
+			std::cout << "Август" << std::endl;
+			break;
+		case september:
+			std::cout << "Сентябрь" << std::endl;
+			break;
+		case october:
+			std::cout << "Октябрь" << std::endl;
+			break;
+		case november:
+			std::cout << "Ноябрь" << std::endl;
+			break;
+		case december:
+			std::cout << "Декабрь" << std::endl;
+			break;
+		default:
+			std::cout << "Неправильный номер!" << std::endl;
+			
+		}
+	}
+	while (month != 0);
+	return EXIT_SUCCESS;
+}
