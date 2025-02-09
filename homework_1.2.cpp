@@ -15,20 +15,20 @@ int main() {
 	setlocale(LC_ALL, "ru");
 	bank_account person1;
 	double new_balance{};
-	std::cout << "Ââåäèòå íîìåð ñ÷åòà: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ ÑÑ‡ÐµÑ‚Ð°: ";
 	std::cin >> person1.number;
 
-	std::cout << "Ââåäèòå èìÿ âëàäåëüöà: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ð²Ð»Ð°Ð´ÐµÐ»ÑŒÑ†Ð°: ";
 	std::cin >> person1.name;
 
-	std::cout << "Ââåäèòå áàëàíñ: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð±Ð°Ð»Ð°Ð½Ñ: ";
 	std::cin >> person1.money;
 
-	std::cout << "Ââåäèòå íîâûé áàëàíñ: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ñ‹Ð¹ Ð±Ð°Ð»Ð°Ð½Ñ: ";
 	std::cin >> new_balance;
 	change_balance(person1, new_balance);
 
-	std::cout << "Âàø ñ÷¸ò: " << person1.name << ", " << person1.number << ", " << person1.money << std::endl;
+	std::cout << "Ð’Ð°Ñˆ ÑÑ‡Ñ‘Ñ‚: " << person1.name << ", " << person1.number << ", " << person1.money << std::endl;
 
 	return EXIT_SUCCESS;
 }
