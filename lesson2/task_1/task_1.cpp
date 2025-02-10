@@ -49,19 +49,19 @@ int main() {
 	Calculator calc;
 
 	while (true){
-		std::cout << "Ââåäèòå num1: ";
+		std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ num1: ";
 		std::cin >> num1;
 		while (!calc.set_num1(num1)) {
-			std::cout << "Íåâåðíûé ââîä!" << std::endl;
-			std::cout << "Ââåäèòå num1: ";
+			std::cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð²Ð²Ð¾Ð´!" << std::endl;
+			std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ num1: ";
 			std::cin >> num1;
 		}
 
-		std::cout << "Ââåäèòå num2: ";
+		std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ num2: ";
 		std::cin >> num2;
 		while (!calc.set_num2(num2)) {
-			std::cout << "Íåâåðíûé ââîä!" << std::endl;
-			std::cout << "Ââåäèòå num2: ";
+			std::cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð²Ð²Ð¾Ð´!" << std::endl;
+			std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ num2: ";
 			std::cin >> num2;
 		}
 		std::cout << "num1 + num2 = " << calc.add() << std::endl;
