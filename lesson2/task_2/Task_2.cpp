@@ -24,7 +24,7 @@ public:
 void action(Counter& count) {
 	char com{};
 	while (com != 'x') {
-		std::cout << "Ââåäèòå êîìàíäó ('+', '-', '=' èëè 'x'): ";
+		std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð¼Ð°Ð½Ð´Ñƒ ('+', '-', '=' Ð¸Ð»Ð¸ 'x'): ";
 		std::cin >> com;
 		switch (com) {
 		case ('+'):
@@ -45,22 +45,22 @@ void action(Counter& count) {
 int main() {
 	setlocale(LC_ALL, "ru");
 	std::string answ;
-	std::cout << "Âû õîòèòå óêàçàòü íà÷àëüíîå çíà÷åíèå ñ÷åò÷èêà? Ââåäèòå äà èëè íåò: ";
+	std::cout << "Ð’Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑƒÐºÐ°Ð·Ð°Ñ‚ÑŒ Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ ÑÑ‡ÐµÑ‚Ñ‡Ð¸ÐºÐ°? Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð° Ð¸Ð»Ð¸ Ð½ÐµÑ‚: ";
 	std::cin >> answ;
 	if (size(answ) == 2 ) {
 		int initial_v;
-		std::cout << "Ââåäèòå íà÷àëüíîå çíà÷åíèå ñ÷¸ò÷èêà: ";
+		std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ ÑÑ‡Ñ‘Ñ‚Ñ‡Ð¸ÐºÐ°: ";
 		std::cin >> initial_v;
 		Counter count(initial_v);
 		action(count);
-		std::cout << "Äî ñâèäàíèÿ!" << std::endl;
+		std::cout << "Ð”Ð¾ ÑÐ²Ð¸Ð´Ð°Ð½Ð¸Ñ!" << std::endl;
 		return EXIT_SUCCESS;
 		
 	}
 	else {
 		Counter count;
 		action(count);
-		std::cout << "Äî ñâèäàíèÿ!" << std::endl;
+		std::cout << "Ð”Ð¾ ÑÐ²Ð¸Ð´Ð°Ð½Ð¸Ñ!" << std::endl;
 		return EXIT_SUCCESS;
 		
 	}
