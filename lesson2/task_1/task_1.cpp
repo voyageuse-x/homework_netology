@@ -1,75 +1,72 @@
 #include <iostream>
 
-class Calculator {
-	double num1;
-	double num2;
-public:
-	double add() {
-		return num1 + num2;
-	}
-	double multiply() {
-		return num1 * num2;
-	}
-	double subtract_1_2() {
-		return num1 - num2;
-	}
-	double subtract_2_1() {
-		return num2 - num1;
-	}
-	double divide_1_2() {
-		return num1 / num2;
-	} 
-	double divide_2_1() {
-		return num2 / num1;
-	}
-	bool set_num1(double num1) {
-		if (num1 == 0) {
-			return false;
-		}
-		else {
-			this->num1 = num1;
-			return true;
-		}
-	} 
-	bool set_num2(double num2) {
-		if (num2 == 0) {
-			return false;
-		}
-		else {
-			this->num2 = num2;
-			return true;
-		}
-	}
+enum Months
+{
+	january = 1,
+	february,
+	march,
+	april,
+	may,
+	june,
+	july,
+	august,
+	september,
+	october,
+	november,
+	december
+
 };
 
 int main() {
 	setlocale(LC_ALL, "ru");
-	double num1{};
-	double num2{};
-	Calculator calc;
+	Months month{};
+	int pr_month{};
+	do {
+		std::cout << "Введите номер месяца: ";
+		std::cin >> pr_month;
+		month = static_cast<Months>(pr_month);
 
-	while (true){
-		std::cout << "Введите num1: ";
-		std::cin >> num1;
-		while (!calc.set_num1(num1)) {
-			std::cout << "Неверный ввод!" << std::endl;
-			std::cout << "Введите num1: ";
-			std::cin >> num1;
-		}
+		switch (month) {
+		case january:
+			std::cout << "Январь" << std::endl;
+			break;
+		case february:
+			std::cout << "Февраль" << std::endl;
+			break;
+		case march:
+			std::cout << "Март" << std::endl;
+			break;
+		case april:
+			std::cout << "Апрель" << std::endl;
+			break;
+		case may:
+			std::cout << "Май" << std::endl;
+			break;
+		case june:
+			std::cout << "Июнь" << std::endl;
+			break;
+		case july:
+			std::cout << "Июль" << std::endl;
+			break;
+		case august:
+			std::cout << "Август" << std::endl;
+			break;
+		case september:
+			std::cout << "Сентябрь" << std::endl;
+			break;
+		case october:
+			std::cout << "Октябрь" << std::endl;
+			break;
+		case november:
+			std::cout << "Ноябрь" << std::endl;
+			break;
+		case december:
+			std::cout << "Декабрь" << std::endl;
+			break;
+		default:
+			std::cout << "Неправильный номер!" << std::endl;
 
-		std::cout << "Введите num2: ";
-		std::cin >> num2;
-		while (!calc.set_num2(num2)) {
-			std::cout << "Неверный ввод!" << std::endl;
-			std::cout << "Введите num2: ";
-			std::cin >> num2;
 		}
-		std::cout << "num1 + num2 = " << calc.add() << std::endl;
-		std::cout << "num1 - num2 = " << calc.multiply() << std::endl;
-		std::cout << "num2 - num1 = " << calc.subtract_1_2() << std::endl;
-		std::cout << "num1 * num2 = " << calc.subtract_2_1() << std::endl;
-		std::cout << "num1 / num2 = " << calc.divide_1_2() << std::endl;
-		std::cout << "num2 / num1 = " << calc.divide_2_1() << std::endl;
-	}
+	} while (pr_month != 0);
 	return EXIT_SUCCESS;
 }
