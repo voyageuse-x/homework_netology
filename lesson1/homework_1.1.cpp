@@ -25,7 +25,7 @@ int main() {
 		std::cout << "Введите номер месяца: ";
 		std::cin >> pr_month;
 		if (pr_month == 0) {
-			std::cout << "До свидвния!" << std::endl;
+			std::cout << "До свидания!" << std::endl;
 			return EXIT_SUCCESS;
 		}
 		month = static_cast<Months>(pr_month);
