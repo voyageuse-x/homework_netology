@@ -2,8 +2,7 @@
 
 enum Months
 {
-	bye,
-	january,
+	january = 1,
 	february,
 	march,
 	april,
@@ -22,14 +21,16 @@ int main() {
 	setlocale(LC_ALL, "ru");
 	Months month{};
 	int pr_month{};
-	do {
+	while (true){
 		std::cout << "Введите номер месяца: ";
 		std::cin >> pr_month;
+		if (pr_month == 0) {
+			std::cout << "До свидвния!" << std::endl;
+			return EXIT_SUCCESS;
+		}
 		month = static_cast<Months>(pr_month);
+
 		switch (month) {
-		case bye:
-			std::cout << "До свидания" << std::endl;
-			break;
 		case january:
 			std::cout << "Январь" << std::endl;
 			break;
@@ -70,6 +71,6 @@ int main() {
 			std::cout << "Неправильный номер!" << std::endl;
 
 		}
-	} while (month != bye);
-	return EXIT_SUCCESS;
+	}
+
 }
