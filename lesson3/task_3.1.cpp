@@ -11,8 +11,8 @@ public:
 	address() {
 		city = "city";
 		street = "street";
-		numb_house = 1;
-		numb_flat = 1;
+		numb_house = "1";
+		numb_flat = "1";
 	}
 	void set_address(std::string city, std::string street, std::string numb_house, std::string numb_flat) {
 		this->city = city;
