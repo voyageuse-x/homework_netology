@@ -36,6 +36,6 @@ int main() {
 	std::cout << "Количество сторон: " << std::endl;
 	std::cout << "Фигура: " << figr.get_num_sides() << std::endl;
 	std::cout << "Треугольник: " << trian.get_num_sides() << std::endl;
-	std::cout << "Четырехугольни: " << quard.get_num_sides() << std::endl;
+	std::cout << "Четырехугольник: " << quard.get_num_sides() << std::endl;
 	return EXIT_SUCCESS;
 }
