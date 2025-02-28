@@ -1,14 +1,20 @@
-﻿#include <iostream>
+#include <iostream>
+#include <iostream>
 
 class Figure {
 public:
-	void set_num_sides(int n) {
-		num_sides = n;
-	}
 	int get_num_sides() {
 		return num_sides;
 	}
+	std::string get_name() {
+		return name;
+	}
+	Figure() {
+		name = "Фигура";
+		num_sides = 0;
+	}
 protected:
+	std::string name;
 	int num_sides{};
 
 };
@@ -16,13 +22,15 @@ protected:
 class Triangle : public Figure {
 public:
 	Triangle() {
-		set_num_sides(3);
+		name = "Треугольник";
+		num_sides = 3;
 	}
 };
 class Quard : public Figure {
 public:
-	Quard (){
-		set_num_sides(4);
+	Quard() {
+		name = "Четырехугольник";
+		num_sides = 4;
 	}
 };
 
@@ -34,8 +42,8 @@ int main() {
 	Quard quard;
 
 	std::cout << "Количество сторон: " << std::endl;
-	std::cout << "Фигура: " << figr.get_num_sides() << std::endl;
-	std::cout << "Треугольник: " << trian.get_num_sides() << std::endl;
-	std::cout << "Четырехугольник: " << quard.get_num_sides() << std::endl;
+	std::cout << figr.get_name() << ": " << figr.get_num_sides() << std::endl;
+	std::cout << trian.get_name() << ": " << trian.get_num_sides() << std::endl;
+	std::cout << quard.get_name() <<": " << quard.get_num_sides() << std::endl;
 	return EXIT_SUCCESS;
 }
