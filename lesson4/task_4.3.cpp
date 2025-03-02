@@ -1,5 +1,5 @@
-﻿#include <iostream>
 #include <string>
+#include <iostream>
 
 class Figure {
 protected:
@@ -47,7 +47,7 @@ public:
 		B = 60;
 		C = 70;
 	}
-	void print_info() override{
+	void print_info() override {
 		Figure::print_info();
 		std::cout << "Стороны: a = " << a << " b = " << b << " c = " << c << std::endl;
 		std::cout << "Углы: A = " << A << " B = " << B << " C = " << C << std::endl;
@@ -55,12 +55,8 @@ public:
 	}
 
 	virtual bool check() override {
-		if (count_sides == 3 && (A + B + C) == 180) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		bool is_valid = (count_sides == 3 && (A + B + C) == 180);
+		return is_valid;
 	}
 };
 class Right_angled_triangle : public Triangle {
@@ -70,12 +66,8 @@ public:
 		C = 90;
 	}
 	bool check() override {
-		if (C == 90) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		bool is_valid = (Triangle::check() && C == 90);
+		return is_valid;
 	}
 };
 class Isosceles_triangle : public Triangle {
@@ -86,12 +78,8 @@ public:
 		A = C;
 	}
 	bool check() override {
-		if (a == c && A == C) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		bool is_valid = (Triangle::check() && a == c && A == C);
+		return is_valid;
 	}
 };
 class Equilateral_triangle : public Triangle {
@@ -102,16 +90,12 @@ public:
 		A = B = C = 60;
 	}
 	bool check() override {
-		if (a == c && b == c && A == 60 && B == 60 && C == 60) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		bool is_valid = (Triangle::check() && a == c && b == c && A == 60 && B == 60 && C == 60);
+		return is_valid;
 	}
 };
 
-class Quadrilateral : public Figure{
+class Quadrilateral : public Figure {
 protected:
 	int a, b, c, d;
 	int A, B, C, D;
@@ -136,12 +120,8 @@ public:
 	}
 
 	virtual bool check() override {
-		if (count_sides == 4 && (A + B + C + D) == 360) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		bool is_valid = (count_sides == 4 && (A + B + C + D) == 360);
+		return is_valid;
 	}
 };
 class Rectangle : public Quadrilateral {
@@ -150,15 +130,11 @@ public:
 		name = "Прямоугольник";
 		a = c;
 		b = d;
-		A = B = C = D;
+		A = B = C = D = 90;
 	}
 	bool check() override {
-		if (a == c && b == d && A == 90 && B == 90 && C == 90 && D == 90) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		bool is_valid = (Quadrilateral::check() && a == c && b == d && A == 90 && B == 90 && C == 90 && D == 90);
+		return is_valid;
 	}
 };
 class Quadrant : public Quadrilateral {
@@ -169,12 +145,8 @@ public:
 		A = B = C = D = 90;
 	}
 	bool check() {
-		if (a == b && b == c && c == d && A == 90 && B == 90 && C == 90 && D == 90) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		bool is_valid = (Quadrilateral::check() && a == b && b == c && c == d && A == 90 && B == 90 && C == 90 && D == 90);
+		return is_valid;
 	}
 };
 class Parallelogram : public Quadrilateral {
@@ -187,12 +159,8 @@ public:
 		B = D;
 	}
 	bool check() {
-		if (a == c && b == d && A == C && B == D) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		bool is_valid = (Quadrilateral::check() && a == c && b == d && A == C && B == D);
+		return is_valid;
 	}
 };
 class Rhomb : public Quadrilateral {
@@ -204,12 +172,8 @@ public:
 		B = D;
 	}
 	bool check() {
-		if (a == b && b == c && c == d && A == C && B == D) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		bool is_valid = (Quadrilateral::check() && a == b && b == c && c == d && A == C && B == D);
+		return is_valid;
 	}
 };
 
