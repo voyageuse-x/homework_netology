@@ -5,23 +5,23 @@ int main() {
 	setlocale(LC_ALL, "ru");
 	int a, b;
 	int operation;
-	std::cout << "Ââåäèòå ïåðâîå ÷èñëî: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿ÐµÑ€Ð²Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: ";
 	std::cin >> a;
-	std::cout << "Ââåäèòå âòîðîå ÷èñëî: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ñ‚Ð¾Ñ€Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾: ";
 	std::cin >> b;
-	std::cout << "Âûáåðèòå îïåðàöèþ (1 - ñëîæåíèå, 2 âû÷èòàíèå, 3 - óìíîæåíèå, 4 - äåëåíèå, 5 - âîçâåäåíèå â ñòåïåíü):";
+	std::cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸ÑŽ (1 - ÑÐ»Ð¾Ð¶ÐµÐ½Ð¸Ðµ, 2 Ð²Ñ‹Ñ‡Ð¸Ñ‚Ð°Ð½Ð¸Ðµ, 3 - ÑƒÐ¼Ð½Ð¾Ð¶ÐµÐ½Ð¸Ðµ, 4 - Ð´ÐµÐ»ÐµÐ½Ð¸Ðµ, 5 - Ð²Ð¾Ð·Ð²ÐµÐ´ÐµÐ½Ð¸Ðµ Ð² ÑÑ‚ÐµÐ¿ÐµÐ½ÑŒ):";
 	std::cin >> operation;
 	switch (operation) {
 	case 1:
-		std::cout << a << " ïëþñ " << b << " = " << addition(a, b); break;
+		std::cout << a << " Ð¿Ð»ÑŽÑ " << b << " = " << addition(a, b); break;
 	case 2:
-		std::cout << a << " ìèíóñ " << b << " = " << subtruct(a, b); break;
+		std::cout << a << " Ð¼Ð¸Ð½ÑƒÑ " << b << " = " << subtruct(a, b); break;
 	case 3:
-		std::cout << a << " óìíîæèòü íà " << b << " = " << multiply(a, b); break;
+		std::cout << a << " ÑƒÐ¼Ð½Ð¾Ð¶Ð¸Ñ‚ÑŒ Ð½Ð° " << b << " = " << multiply(a, b); break;
 	case 4:
-		std::cout << a << " ðàçäåëèòü íà " << b << " = " << division(a, b); break;
+		std::cout << a << " Ñ€Ð°Ð·Ð´ÐµÐ»Ð¸Ñ‚ÑŒ Ð½Ð° " << b << " = " << division(a, b); break;
 	case 5:
-		std::cout << a << " â ñòåïåíè " << b << " = " << exponentiation(a, b);
+		std::cout << a << " Ð² ÑÑ‚ÐµÐ¿ÐµÐ½Ð¸ " << b << " = " << exponentiation(a, b);
 
 	}
 	return EXIT_SUCCESS;
