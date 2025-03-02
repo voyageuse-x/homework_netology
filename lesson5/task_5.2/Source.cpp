@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <Windows.h>
-#include "Myclass.h"
+#include "Class_counter.h"
 
 
 void action(Counter& count) {

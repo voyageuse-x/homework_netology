@@ -2,8 +2,9 @@
 #include <iostream>
 class Counter
 {
-public:
+private:
 	int initial_v;
+public:
 	Counter();
 	Counter(int initial_v);
 	void grow();

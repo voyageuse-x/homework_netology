@@ -1,4 +1,4 @@
-#include "Myclass.h"
+#include "Class_counter.h"
 
 Counter::Counter() {
 	initial_v = 1;
