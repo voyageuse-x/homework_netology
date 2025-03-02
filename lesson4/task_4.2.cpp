@@ -1,14 +1,25 @@
-﻿#include <iostream>
 #include <string>
+#include <iostream>
 
-
-class Triangle {
+class Figure {
 protected:
-	std::string name = "Треугольник";
+	int count_sides;
+	std::string name = "Фигура";
+public:
+	virtual void print() {
+		return;
+	}
+	
+};
+
+class Triangle: public Figure {
+protected:
 	int a, b, c;
 	int A, B, C;
 public:
 	Triangle() {
+		count_sides = 3;
+		name = "Треугольник";
 		a = 10;
 		b = 20;
 		c = 30;
@@ -16,26 +27,10 @@ public:
 		B = 60;
 		C = 70;
 	}
-	std::string get_name() {
-		return name;
-	}
-	int get_a() {
-		return a;
-	}
-	int get_b() {
-		return b;
-	}
-	int get_c() {
-		return c;
-	}
-	int get_A() {
-		return A;
-	}
-	int get_B() {
-		return B;
-	}
-	int get_C() {
-		return C;
+	void print() override{
+		std::cout << "\n" << name << ": \nСтороны: a = " << a << " b = " << b << " c = " << c << std::endl;
+		std::cout << "Углы: A = " << A << " B = " << B << " C = " << C << std::endl;
+
 	}
 };
 
@@ -64,13 +59,14 @@ public:
 };
 
 
-class Quadrilateral {
+class Quadrilateral: public Figure {
 protected:
-	std::string name = "Четырехугольник";
 	int a, b, c, d;
 	int A, B, C, D;
 public:
 	Quadrilateral() {
+		count_sides = 4;
+		name = "Четырехугольник";
 		a = 10;
 		b = 20;
 		c = 30;
@@ -80,36 +76,14 @@ public:
 		C = 70;
 		D = 80;
 	}
-	std::string get_name() {
-		return name;
-	}
-	int get_a() {
-		return a;
-	}
-	int get_b() {
-		return b;
-	}
-	int get_c() {
-		return c;
-	}
-	int get_d() {
-		return d;
-	}
-	int get_A() {
-		return A;
-	}
-	int get_B() {
-		return B;
-	}
-	int get_C() {
-		return C;
-	}
-	int get_D() {
-		return D;
+	void print() override {
+		std::cout << "\n" << name << ": \nСтороны: a = " << a << " b = " << b << " c = " << c << " d = "<< d<< std::endl;
+		std::cout << "Углы: A = " << A << " B = " << B << " C = " << C << " D = " << D << std::endl;
+
 	}
 
 };
-class Rectangle : public Quadrilateral{
+class Rectangle : public Quadrilateral {
 public:
 	Rectangle() {
 		name = "Прямоугольник";
@@ -146,55 +120,48 @@ public:
 
 	}
 };
-void print_info_triangle(Triangle *ptr_class) {
-	std::cout << "\n" << ptr_class->get_name() << ": \nСтороны: a = " << ptr_class->get_a() << " b = " << ptr_class->get_b() << " c = " << ptr_class->get_c() << std::endl;
-	std::cout << "Углы: A = " << ptr_class->get_A() << " B = " << ptr_class->get_B() << " C = " << ptr_class->get_C() << std::endl;
-}
-
-void print_info_rectangle(Quadrilateral* ptr_class) {
-	std::cout << "\n" << ptr_class->get_name() << ": \nСтороны: a = " << ptr_class->get_a() << " b = " << ptr_class->get_b() << " c = " << ptr_class->get_c() << " d = " << ptr_class->get_d() << std::endl;
-	std::cout << "Углы: A = " << ptr_class->get_A() << " B = " << ptr_class->get_B() << " C = " << ptr_class->get_C() << " D = " << ptr_class->get_D() << std::endl;
-
+void print_info(Figure* ptr_class) {
+	 ptr_class->print();
 }
 int main() {
 	setlocale(LC_ALL, "ru");
-
+	
 	Triangle tr;
-	Triangle* ptr_tr = &tr;
-	print_info_triangle(ptr_tr);
+	Figure* ptr_tr = &tr;
+	print_info(ptr_tr);
 
 	Right_angled_triangle rat;
-	Triangle* ptr_rat = &rat;
-	print_info_triangle(ptr_rat);
+	Figure* ptr_rat = &rat;
+	print_info(ptr_rat);
 
 	Isosceles_triangle it;
-	Triangle* ptr_it = &it;
-	print_info_triangle(ptr_it);
+	Figure* ptr_it = &it;
+	print_info(ptr_it);
 
 	Equilateral_triangle et;
-	Triangle* ptr_et = &et;
-	print_info_triangle(ptr_et);
+	Figure* ptr_et = &et;
+	print_info(ptr_et);
 
 	Quadrilateral ql;
-	Quadrilateral* ptr_ql = &ql;
-	print_info_rectangle(ptr_ql);
+	Figure* ptr_ql = &ql;
+	print_info(ptr_ql);
 
 
 	Rectangle rec;
-	Quadrilateral* ptr_rec = &rec;
-	print_info_rectangle(ptr_rec);
+	Figure* ptr_rec = &rec;
+	print_info(ptr_rec);
 
 	Quadrant quadr;
-	Quadrilateral* ptr_quadr = &quadr;
-	print_info_rectangle(ptr_quadr);
+	Figure* ptr_quadr = &quadr;
+	print_info(ptr_quadr);
 
 	Parallelogram par;
-	Quadrilateral* ptr_par = &par;
-	print_info_rectangle(ptr_par);
+	Figure* ptr_par = &par;
+	print_info(ptr_par);
 
 	Rhomb rhomb;
-	Quadrilateral* ptr_rhomb = &rhomb;
-	print_info_rectangle(ptr_rhomb);
+	Figure* ptr_rhomb = &rhomb;
+	print_info(ptr_rhomb);
 
 	return EXIT_SUCCESS;
 }
