@@ -1,4 +1,4 @@
-#include "Header.h"
+#include "Math_functions.h"
 int addition(int a, int b) {
 	return a + b;
 }

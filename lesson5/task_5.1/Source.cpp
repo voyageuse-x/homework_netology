@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Header.h"
+#include "Math_functions.h"
 
 int main() {
 	setlocale(LC_ALL, "ru");
