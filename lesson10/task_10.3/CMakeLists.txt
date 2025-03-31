@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.22.0)
+project(Leaving_person)
+add_library(LeaverLib SHARED Leaver.h Leaver.cpp)
+add_executable(Leaving_person Leaving_personcpp.cpp)
+target_link_libraries(Leaving_person LeaverLib)
